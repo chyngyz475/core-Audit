@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
-
+from audit.models import Dict
 class HomeView(APIView):
      
    permission_classes = (IsAuthenticated, )
@@ -24,13 +24,16 @@ class LogoutView(APIView):
                return Response(status=status.HTTP_400_BAD_REQUEST)
           
 
-def core(request: HttpRequest, page_title: str) -> HttpResponse:
-    current_page = get_object_or_404()
-     
+def index(request: HttpRequest) -> HttpResponse:
+    """
+    Функция-контроллер главной страницы.
+    :param request: Объект запроса.
+    :return: Объект ответа с главной страницей.
+    """
+    objects = Dict.objects.using='kazna'
     context = {
-        'current_page': current_page, 
+        "objects":objects
     }
-
     return render(request=request,
-                  template_name='templates/index.html',
+                  template_name='index.html',
                   context=context)

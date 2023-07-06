@@ -1,0 +1,61 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}
+audit
+{% endblock title %}
+
+{% block container %}
+  <form>
+    <div>
+      <label for="dateTo">До даты:</label>
+      <input type="date" id="dateTo" name="dateTo">
+    </div>
+    <div>
+      <label for="dateAfter">После выбрать календарные дни:</label>
+      <input type="number" id="dateAfter" name="dateAfter">
+    </div>
+    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+      <option selected>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+      <option selected>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+      <option selected>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    <div>
+      <label for="selectForm4">Форма выбора с группами:</label>
+      <select id="selectForm4" name="selectForm4" multiple>
+        <optgroup label="Группа 1">
+          <option value="option1">Опция 1</option>
+          <option value="option2">Опция 2</option>
+        </optgroup>
+        <optgroup label="Группа 2">
+          <option value="option3">Опция 3</option>
+          <option value="option4">Опция 4</option>
+        </optgroup>
+      </select>
+    </div>
+    <div>
+      <input type="checkbox" id="checkbox1" name="checkbox1">
+      <label for="checkbox1">Чекбокс 1</label>
+    </div>
+    <div>
+      <input type="checkbox" id="checkbox2" name="checkbox2">
+      <label for="checkbox2">Чекбокс 2</label>
+    </div>
+    <button type="submit">Сгенерировать отчет</button>
+  </form>
+
+  
+ {% endblock container %}
