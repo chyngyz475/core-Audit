@@ -85,11 +85,11 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.getenv('DISTRIBUTOR_DB_NAME', 'audit_core'),
-        'USER': os.getenv('DISTRIBUTOR_DB_USER', 'audit'),
-        'PASSWORD': os.getenv('DISTRIBUTOR_DB_PASSWORD', 'audit'),
-        'HOST': os.getenv('DISTRIBUTOR_DB_HOST', 'localhost'),
-        'PORT': os.getenv('DISTRIBUTOR_DB_PORT', '5432'),
+        'NAME':  'audit_core',
+        'USER':  'postgres',
+        'PASSWORD':  'postgres',
+        'HOST':  '10.200.24.102',
+        'PORT':  '5432',
     }
 }
 
