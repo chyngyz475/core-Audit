@@ -4,6 +4,12 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from audit.models import Dict
+from .forms import DictForm, DictTypeForm
+from django.shortcuts import render
+
+
+
+
 class HomeView(APIView):
      
    permission_classes = (IsAuthenticated, )
@@ -31,9 +37,14 @@ def index(request: HttpRequest) -> HttpResponse:
     :return: Объект ответа с главной страницей.
     """
     objects = Dict.objects.using='kazna'
+    dict_form = DictForm()
+    dict_type_form = DictTypeForm()
     context = {
-        "objects":objects
+        "objects":objects,
+        'dict_form': dict_form, 'dict_type_form': dict_type_form
     }
     return render(request=request,
                   template_name='index.html',
                   context=context)
+
+
