@@ -1,0 +1,80 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}
+audit
+{% endblock title %}
+
+{% block container %}
+<div class="container">
+  <div>
+    <form action="" method="post">
+      <div>
+
+  
+        <label for="dateFrom">Дата от:</label>
+        <input type="date" id="dateFrom" name="dateFrom" class="form-control">
+  
+  
+        <label for="dateTo">Дата до:</label>
+        <input type="date" id="dateTo" name="dateTo" class="form-control">
+      <div class="card-columns col-sm-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Ведомственная классификация</h5>
+            <div class="row align-items-end">
+              <div class="col-sm-6 field-edit">
+                <div id="ControlHost_ParticipantTab-Paper-Elections-Document-Status_iAuthStatus1" class="viAuthStatus1">
+                  <div class="form-group">
+                    <div class="validator-container">
+                      <div class="dropdown bootstrap-select show-tick form-control iAuthStatus1">
+                        <select name="ControlHost:ParticipantTab-Paper-Elections-Document-Status:iAuthStatus1:iAuthStatus1" id="ControlHost_ParticipantTab-Paper-Elections-Document-Status_iAuthStatus1_iAuthStatus1" class="form-control selectpicker show-tick iAuthStatus1" data-size="15" data-live-search="true" tabindex="-98">
+                            <option value=""></option>
+                            {% for dict in dicts %}
+                                <option value="{{ dict.code }}">{{ dict.name }} </option>
+                            {% endfor %}
+                        </select>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>    
+
+    <div class="card-columns col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Функциональная классификация</h5>
+          <div class="row align-items-end">
+            <div class="col-sm-6 field-edit">
+              <div id="ControlHost_ParticipantTab-Paper-Elections-Document-Status_iAuthStatus1" class="viAuthStatus1">
+                <div class="form-group">
+                  <div class="validator-container">
+                    <div class="dropdown bootstrap-select show-tick form-control iAuthStatus1">
+                        <select name="ControlHost:ParticipantTab-Paper-Elections-Document-Status:iAuthStatus1:iAuthStatus1" id="ControlHost_ParticipantTab-Paper-Elections-Document-Status_iAuthStatus1_iAuthStatus1" class="form-control selectpicker show-tick iAuthStatus1" data-size="15" data-live-search="true" tabindex="-98">
+                            <option value=""></option>
+                            {% for dict_type in dict_types %}
+                                <option>{{ dict_type.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>    
+  <button type="button" class="btn btn-primary btn-lg">Сгенерировать</button>
+  <button type="button" class="btn btn-secondary btn-lg">Отмена</button>
+    </form>
+  </div>
+</div>
+
+
+  
+ {% endblock container %}

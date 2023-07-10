@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "jsx": "react",
+      "noEmit": true,
+      "forceConsistentCasingInFileNames": false,
+      "esModuleInterop":true,
+      "allowImportingTsExtensions" : true
+    }
+  }

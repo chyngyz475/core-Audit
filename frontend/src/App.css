@@ -39,7 +39,7 @@
 .container {
   max-width: 400px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 300px 0 0;
 }
 
 .form-group {
@@ -84,4 +84,10 @@
 }
 .restart{
   padding:13px 16px 20px 22px;
+}
+
+
+
+.App{
+  display: flex;
 }

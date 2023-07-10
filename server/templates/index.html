@@ -93,7 +93,11 @@
       </svg>
       <header class="page-header">
         <nav>
-
+          <ul>
+            <li>
+              <a style="    margin: 0 0 0 20px;" href="/">Главное</a>
+            </li>
+          </ul>
           <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
             <svg width="20" height="20" aria-hidden="true">
               <use xlink:href="#down"></use>
@@ -104,7 +108,15 @@
               <h3>Admin</h3>
             </li>
             <li>
-              <a href="#0">
+              <a href="{% url 'restart' %}">
+                <svg>
+                  <use xlink:href="#pages"></use>
+                </svg>
+                <span>Отчёт</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'restart1' %}">
                 <svg>
                   <use xlink:href="#pages"></use>
                 </svg>
@@ -172,99 +184,11 @@
       </section>
 
       {% block container %}
-      <div class="container">
-        <div>
-          <form action="" method="post">
-            <div>
-              <label for="dateTo">До даты:</label>
-              <input type="date" id="dateTo" name="dateTo">
-            </div>
-            <div>
-              <label for="dateAfter">После :</label>
-              <input type="date" id="dateTo" name="dateTo"> 
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-              <label class="form-check-label" for="flexRadioDefault1">
-                Default radio
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-              <label class="form-check-label" for="flexRadioDefault2">
-                Default checked radio
-              </label>
-            </div>
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-            <div class="card-columns col-sm-12">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Ведомственная классификация</h5>
-                  <div class="row align-items-end">
-                    <div class="col-sm-6 field-edit">
-                      <div id="ControlHost_ParticipantTab-Paper-Elections-Document-Status_iAuthStatus1" class="viAuthStatus1">
-                        <div class="form-group">
-                          <div class="validator-container">
-                            <div class="dropdown bootstrap-select show-tick form-control iAuthStatus1">
-                              <select name="ControlHost:ParticipantTab-Paper-Elections-Document-Status:iAuthStatus1:iAuthStatus1" id="ControlHost_ParticipantTab-Paper-Elections-Document-Status_iAuthStatus1_iAuthStatus1" class="form-control selectpicker show-tick iAuthStatus1" data-size="15" data-live-search="true" tabindex="-98">
-                                <option value=""></option>
-                                <option value="Pend">1</option>
-                              </select>
-                            </div>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            </div>    
-            <div class="px-2 align-items-end"><!-- px-1 to px-3 to add different indents -->
-            <a class="btn btn-primary SaveEdits mr-1" href="javascript:alert('hi');">Сохранить</a>
-          </div> 
-          <div class="card-columns col-sm-12">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Функциональная классификация</h5>
-                <div class="row align-items-end">
-                  <div class="col-sm-6 field-edit">
-                    <div id="ControlHost_ParticipantTab-Paper-Elections-Document-Status_iAuthStatus1" class="viAuthStatus1">
-                      <div class="form-group">
-                        <div class="validator-container">
-                          <div class="dropdown bootstrap-select show-tick form-control iAuthStatus1">
-                            <select name="ControlHost:ParticipantTab-Paper-Elections-Document-Status:iAuthStatus1:iAuthStatus1" id="ControlHost_ParticipantTab-Paper-Elections-Document-Status_iAuthStatus1_iAuthStatus1" class="form-control selectpicker show-tick iAuthStatus1" data-size="15" data-live-search="true" tabindex="-98">
-                              <option value=""></option>
-                              <option value="Pend">1</option>
-                            </select>
-                          </div>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>    
-          <div class="px-2 align-items-end"><!-- px-1 to px-3 to add different indents -->
-          <a class="btn btn-primary SaveEdits mr-1" href="javascript:alert('hi');">Сохранить</a>
-        </div> 
-        <button type="button" class="btn btn-primary btn-lg">Сгенерировать</button>
-        <button type="button" class="btn btn-secondary btn-lg">Отмена</button>
-          </form>
-        </div>
-      </div>
+
+
       {% endblock container %}
+
+
 <script src="{% static 'index.js' %}"></script>
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"

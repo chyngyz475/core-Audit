@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     'audit',
     'corsheaders',
     'rest_framework',
-    'rest_framework_simplejwt.token_blacklist'
+    'rest_framework_simplejwt.token_blacklist',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -102,6 +102,16 @@ DATABASES = {
 }
 
 # settings.py
+CONNECTION_DB = {
+    'driver': 'postgres',
+    'username': os.getenv('DISTRIBUTOR_DB_USER', 'audit_core'),
+    'password': os.getenv('DISTRIBUTOR_DB_PASSWORD', 'postgres'),
+    'host': os.getenv('DISTRIBUTOR_DB_HOST', '10.200.24.102'),
+    'database': os.getenv('DISTRIBUTOR_DB_NAME', 'audit_core'),
+    'schema': 'public',
+    'port': os.getenv('DISTRIBUTOR_DB_PORT', 5432),
+    'jdbc_driver': 'org.postgresql.Driver'
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
