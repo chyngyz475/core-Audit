@@ -1,0 +1,19 @@
+<h1>Отчет</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Код</th>
+        <th>Наименование</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for dict in dicts %}
+        <tr>
+          <td>{{ dict.id }}</td>
+          <td>{{ dict.code }}</td>
+          <td>{{ dict.name }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>

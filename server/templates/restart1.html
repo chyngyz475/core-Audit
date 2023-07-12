@@ -6,75 +6,80 @@ audit
 {% endblock title %}
 
 {% block container %}
-<div class="container">
-  <div>
-    <form action="" method="post">
-      <div>
 
-  
-        <label for="dateFrom">Дата от:</label>
-        <input type="date" id="dateFrom" name="dateFrom" class="form-control">
-  
-  
-        <label for="dateTo">Дата до:</label>
-        <input type="date" id="dateTo" name="dateTo" class="form-control">
-      <div class="card-columns col-sm-12">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Ведомственная классификация</h5>
-            <div class="row align-items-end">
-              <div class="col-sm-6 field-edit">
-                <div id="ControlHost_ParticipantTab-Paper-Elections-Document-Status_iAuthStatus1" class="viAuthStatus1">
-                  <div class="form-group">
-                    <div class="validator-container">
-                      <div class="dropdown bootstrap-select show-tick form-control iAuthStatus1">
-                        <select name="ControlHost:ParticipantTab-Paper-Elections-Document-Status:iAuthStatus1:iAuthStatus1" id="ControlHost_ParticipantTab-Paper-Elections-Document-Status_iAuthStatus1_iAuthStatus1" class="form-control selectpicker show-tick iAuthStatus1" data-size="15" data-live-search="true" tabindex="-98">
-                            <option value=""></option>
-                            {% for dict in dicts %}
-                                <option value="{{ dict.code }}">{{ dict.name }} </option>
-                            {% endfor %}
-                        </select>
-                      </div>
-                    </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>    
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Фильтр данных и генерация отчета</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
 
-    <div class="card-columns col-sm-12">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Функциональная классификация</h5>
-          <div class="row align-items-end">
-            <div class="col-sm-6 field-edit">
-              <div id="ControlHost_ParticipantTab-Paper-Elections-Document-Status_iAuthStatus1" class="viAuthStatus1">
-                <div class="form-group">
-                  <div class="validator-container">
-                    <div class="dropdown bootstrap-select show-tick form-control iAuthStatus1">
-                        <select name="ControlHost:ParticipantTab-Paper-Elections-Document-Status:iAuthStatus1:iAuthStatus1" id="ControlHost_ParticipantTab-Paper-Elections-Document-Status_iAuthStatus1_iAuthStatus1" class="form-control selectpicker show-tick iAuthStatus1" data-size="15" data-live-search="true" tabindex="-98">
-                            <option value=""></option>
-                            {% for dict_type in dict_types %}
-                                <option>{{ dict_type.name }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>    
-  <button type="button" class="btn btn-primary btn-lg">Сгенерировать</button>
-  <button type="button" class="btn btn-secondary btn-lg">Отмена</button>
-    </form>
-  </div>
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+    }
+
+    label {
+      margin-bottom: 10px;
+    }
+
+    input[type="date"],
+    select {
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+<div style="margin: 0 0 0 219px;" class="container">
+  <h1>Фильтр данных и генерация отчета</h1>
+  <form method="POST">
+    {% csrf_token %}
+    <label for="date_from">Дата До:</label>
+    <input type="date" name="date_from" id="date_from">
+
+    <label for="date_to">Дата После:</label>
+    <input type="date" name="date_to" id="date_to">
+
+    <label for="dict_type">Тип справочника:</label>
+    <select multiple name="dict_type" id="dict_type">
+      {% for dict_type in dict_types %}
+        <option value="{{ dict_type.name }}">{{ dict_type.name }}</option>
+      {% endfor %}
+    </select>
+
+    <label for="dict">Справочник:</label>
+    <select multiple name="dict" id="dict">
+      {% for dict_entry in dicts %}
+        <option value="{{ dict_entry.name }}">{{ dict_entry.name }}</option>
+      {% endfor %}
+    </select>
+
+    <button type="submit">Генерация отчета</button>
+  </form>
 </div>
+</body>
+</html>
 
 
-  
  {% endblock container %}

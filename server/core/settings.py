@@ -91,15 +91,16 @@ DATABASES = {
         'HOST':  '10.200.24.102',
         'PORT':  '5432',
     },
-        'kazna': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME':  'kazan3_2023_0309',
-        'USER':  'postgres',
-        'PASSWORD':  'postgres',
-        'HOST':  '10.200.24.102',
-        'PORT':  '5432',
-    }
+    #     'kazna': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME':  'kazan3_2023_0309',
+    #     'USER':  'postgres',
+    #     'PASSWORD':  'postgres',
+    #     'HOST':  '10.200.24.102',
+    #     'PORT':  '5432',
+    # }
 }
+
 
 # settings.py
 CONNECTION_DB = {

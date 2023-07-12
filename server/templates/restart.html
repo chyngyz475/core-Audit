@@ -7,82 +7,21 @@ audit
 
 {% block container %}
 <div class="container">
-  <div>
-    <form action="" method="post">
-      <div>
-
-  
-        <label for="dateFrom">Дата от:</label>
-        <input type="date" id="dateFrom" name="dateFrom" class="form-control">
-  
-  
-        <label for="dateTo">Дата до:</label>
-        <input type="date" id="dateTo" name="dateTo" class="form-control">
-
-      <select class="form-select" aria-label="Default select example">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-      <select class="form-select" aria-label="Default select example">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-      <div class="card-columns col-sm-12">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Ведомственная классификация</h5>
-            <div class="row align-items-end">
-              <div class="col-sm-6 field-edit">
-                <div id="ControlHost_ParticipantTab-Paper-Elections-Document-Status_iAuthStatus1" class="viAuthStatus1">
-                  <div class="form-group">
-                    <div class="validator-container">
-                      <div class="dropdown bootstrap-select show-tick form-control iAuthStatus1">
-                        <select name="ControlHost:ParticipantTab-Paper-Elections-Document-Status:iAuthStatus1:iAuthStatus1" id="ControlHost_ParticipantTab-Paper-Elections-Document-Status_iAuthStatus1_iAuthStatus1" class="form-control selectpicker show-tick iAuthStatus1" data-size="15" data-live-search="true" tabindex="-98">
-                          <option value=""></option>
-                          <option value="Pend">1</option>
-                        </select>
-                      </div>
-                    </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>    
-
-    <div class="card-columns col-sm-12">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Функциональная классификация</h5>
-          <div class="row align-items-end">
-            <div class="col-sm-6 field-edit">
-              <div id="ControlHost_ParticipantTab-Paper-Elections-Document-Status_iAuthStatus1" class="viAuthStatus1">
-                <div class="form-group">
-                  <div class="validator-container">
-                    <div class="dropdown bootstrap-select show-tick form-control iAuthStatus1">
-                      <select name="ControlHost:ParticipantTab-Paper-Elections-Document-Status:iAuthStatus1:iAuthStatus1" id="ControlHost_ParticipantTab-Paper-Elections-Document-Status_iAuthStatus1_iAuthStatus1" class="form-control selectpicker show-tick iAuthStatus1" data-size="15" data-live-search="true" tabindex="-98">
-                        <option value=""></option>
-                        <option value="Pend">1</option>
-                      </select>
-                    </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>    
-
-  <button type="button" class="btn btn-primary btn-lg">Сгенерировать</button>
-  <button type="button" class="btn btn-secondary btn-lg">Отмена</button>
-    </form>
-  </div>
+  <form method="GET">
+    <label for="date1">Дата 1:</label>
+    <input type="date" name="date1" id="date1">
+    <br>
+    <label for="date2">Дата 2:</label>
+    <input type="date" name="date2" id="date2">
+    <br>
+    <label for="dict">Форма 1:</label>
+    <input type="text" name="dict" id="dict">
+    <br>
+    <label for="dict_type">Форма 2:</label>
+    <input type="text" name="dict_type" id="dict_type">
+    <br>
+    <button type="submit">Сгенерировать отчет</button>
+  </form>
 </div>
 
   

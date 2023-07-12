@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}
+audit
+{% endblock title %}
+
+{% block container %}
+<form style="margin: 0 0 0 227px" method="POST" action="{% url 'generate_report' %}">
+    {% csrf_token %}
+        {% for dict_type in dict_type %}
+
+        <select name="dict_types" id="dict_types">
+            <option style="width: 100px;" value="dict_types">{{dict_types}}отчет</option>
+            <!-- Другие варианты dict_type -->
+          </select>
+
+        {% endfor %}
+    <button type="submit">Сгенерировать отчет</button>
+  </form>
+ {% endblock container %}
